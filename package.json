@@ -1,0 +1,17 @@
+{
+  "name": "mmm-ham-display",
+  "version": "0.1.0",
+  "description": "MagicMirror module for HF conditions, greyline, and amateur satellite awareness.",
+  "main": "MMM-HAM-Display.js",
+  "scripts": {
+    "check": "node --check MMM-HAM-Display.js && node --check node_helper.js && node --check config.example.js && node --check examples/minimal-config.js && node --check examples/satellite-config.js"
+  },
+  "keywords": [
+    "magicmirror",
+    "ham-radio",
+    "amateur-radio",
+    "greyline",
+    "satellites"
+  ],
+  "license": "MIT"
+}
