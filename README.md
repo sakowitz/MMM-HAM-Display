@@ -97,7 +97,8 @@ Satellite display example:
 | `hamqslSolarUrl` | HamQSL solar XML | Solar data source URL. |
 | `celestrakBaseUrl` | CelesTrak GP endpoint | Optional base URL for CelesTrak TLE lookup. |
 | `landGeoJsonPath` | `assets/ne_110m_land.geojson` | Local Natural Earth land polygon file used for the world map. |
-| `showHeader` | `true` | Show title, station, status, and updated time. |
+| `showHeader` | `true` | Show title, UTC clock, station, status, and updated time. |
+| `showUtcTime` | `true` | Show current UTC time in the header next to the title. |
 | `showConditionStrip` | `true` | Show MUF, SFI, Kp, sunspots, and X-ray strip. |
 | `showMap` | `true` | Show the map area. |
 | `showGreyline` | `true` | Draw day, night, and greyline shading. |

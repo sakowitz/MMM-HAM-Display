@@ -11,17 +11,23 @@
   border-bottom: 1px solid rgba(210, 235, 220, 0.28);
   display: grid;
   gap: 8px;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
   margin-bottom: 7px;
   padding-bottom: 5px;
 }
 
-.ham-title {
+.ham-header--no-utc {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.ham-title,
+.ham-utc-time {
   color: var(--ham-text);
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .ham-meta,

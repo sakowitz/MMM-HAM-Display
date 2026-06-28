@@ -38,6 +38,7 @@ Module.register("MMM-HAM-Display", {
     showSatelliteFootprints: true,
     showSatelliteLabels: true,
     showHeader: true,
+    showUtcTime: true,
     showConditionStrip: true,
     showMap: true,
     showBandPanel: true,
@@ -287,11 +288,15 @@ Module.register("MMM-HAM-Display", {
 
   buildHeader: function () {
     const header = document.createElement("div");
-    header.className = "ham-header";
+    header.className = this.config.showUtcTime ? "ham-header" : "ham-header ham-header--no-utc";
 
     const title = document.createElement("div");
     title.className = "ham-title";
     title.textContent = this.config.title;
+
+    const utcTime = document.createElement("div");
+    utcTime.className = "ham-utc-time";
+    utcTime.textContent = this.formatUtcTime(new Date());
 
     const meta = document.createElement("div");
     meta.className = "ham-meta";
@@ -302,6 +307,9 @@ Module.register("MMM-HAM-Display", {
     updated.textContent = this.lastUpdated ? `Updated ${this.formatTime(this.lastUpdated)}` : "Waiting for feed";
 
     header.appendChild(title);
+    if (this.config.showUtcTime) {
+      header.appendChild(utcTime);
+    }
     header.appendChild(meta);
     header.appendChild(updated);
     return header;
@@ -1147,6 +1155,10 @@ Module.register("MMM-HAM-Display", {
 
   formatTime: function (date) {
     return date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  },
+
+  formatUtcTime: function (date) {
+    return `${String(date.getUTCHours()).padStart(2, "0")}:${String(date.getUTCMinutes()).padStart(2, "0")} UTC`;
   },
 
   formatShortTime: function (date) {

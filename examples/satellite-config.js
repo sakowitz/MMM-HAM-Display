@@ -19,6 +19,7 @@ const satelliteHamDisplayConfig = {
     mapUpdateInterval: 5 * 1000,
 
     showHeader: true,
+    showUtcTime: true,
     showConditionStrip: true,
     showMap: true,
     showGreyline: true,

@@ -32,6 +32,7 @@ const hamDisplaySampleConfig = {
 
     // Display options.
     showHeader: true,
+    showUtcTime: true,
     showConditionStrip: true,
     showMap: true,
     showGreyline: true,
